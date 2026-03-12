@@ -1,6 +1,7 @@
 import "react-router";
 import { createRequestHandler } from "@react-router/express";
 import express from "express";
+import apiRouter from "./route";
 
 declare module "react-router" {
   interface AppLoadContext {
@@ -10,9 +11,7 @@ declare module "react-router" {
 
 
 export const app = express();
-app.get('/api/health', (req, res) => {
-  res.json({ success: true, message: 'Server is running' });
-});
+app.use('/api',apiRouter);
 
 app.use(
   createRequestHandler({
