@@ -8,7 +8,11 @@ declare module "react-router" {
   }
 }
 
+
 export const app = express();
+app.get('/api/health', (req, res) => {
+  res.json({ success: true, message: 'Server is running' });
+});
 
 app.use(
   createRequestHandler({

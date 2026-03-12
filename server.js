@@ -1,11 +1,13 @@
 import compression from "compression";
 import express from "express";
 import morgan from "morgan";
+import dotenv from "dotenv"
+dotenv.config();
 
 // Short-circuit the type-checking of the built output.
 const BUILD_PATH = "./build/server/index.js";
 const DEVELOPMENT = process.env.NODE_ENV === "development";
-const PORT = Number.parseInt(process.env.PORT || "3000");
+const PORT = Number.parseInt(process.env.PORT || "5001");
 
 const app = express();
 
@@ -20,6 +22,7 @@ if (DEVELOPMENT) {
     }),
   );
   app.use(viteDevServer.middlewares);
+  app.use(morgan("tiny"));
   app.use(async (req, res, next) => {
     try {
       const source = await viteDevServer.ssrLoadModule("./server/app.ts");
@@ -31,6 +34,7 @@ if (DEVELOPMENT) {
       next(error);
     }
   });
+  
 } else {
   console.log("Starting production server");
   app.use(

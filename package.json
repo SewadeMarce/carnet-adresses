@@ -1,10 +1,11 @@
 {
-  "name": "my-react-router-app",
+  "name": "carnet-adresses",
   "private": true,
   "type": "module",
   "scripts": {
     "build": "react-router build",
-    "dev": "cross-env NODE_ENV=development node server.js",
+    "dev:server": "node --watch-path=./server --watch-path=./server.js server.js",
+    "dev": "node server.js",
     "start": "node server.js",
     "typecheck": "react-router typegen && tsc -b"
   },
@@ -12,8 +13,10 @@
     "@react-router/express": "7.10.1",
     "@react-router/node": "7.10.1",
     "compression": "^1.8.1",
+    "dotenv": "^16.4.5",
     "express": "^5.1.0",
     "isbot": "^5.1.31",
+    "lucide-react": "^0.562.0",
     "morgan": "^1.10.1",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
@@ -29,7 +32,7 @@
     "@types/node": "^22",
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
-    "cross-env": "^10.0.0",
+    "cross-env": "^10.1.0",
     "tailwindcss": "^4.1.13",
     "typescript": "^5.9.2",
     "vite": "^7.1.7",
