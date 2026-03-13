@@ -28,9 +28,10 @@ app.use('/api/auth',authRouter);
 app.use(
   createRequestHandler({
     build: () => import("virtual:react-router/server-build"),
-    getLoadContext() {
+    getLoadContext(req, res) {
       return {
         VALUE_FROM_EXPRESS: "Hello from Express",
+        user: req.user || null, // Add user to context
       };
     },
   }),
