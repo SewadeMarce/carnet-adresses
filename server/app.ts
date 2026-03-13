@@ -2,6 +2,10 @@ import "react-router";
 import { createRequestHandler } from "@react-router/express";
 import express from "express";
 import apiRouter from "./route";
+import cookieParser from "cookie-parser";
+import { optionalAuthMiddleware } from "./middleware/auth";
+import database from "./config/db";
+
 
 declare module "react-router" {
   interface AppLoadContext {
@@ -10,7 +14,14 @@ declare module "react-router" {
 }
 
 
+
 export const app = express();
+app.use(express.json());
+app.use(cookieParser());
+
+await database.connect();
+app.use(optionalAuthMiddleware);
+
 app.use('/api',apiRouter);
 
 app.use(

@@ -6,7 +6,7 @@
     "app/**/.server/**/*",
     "app/**/.client/**/*",
     "server/**/*"
-  ],
+, "server/express.d.ts"  ],
   "compilerOptions": {
     "composite": true,
     "strict": true,

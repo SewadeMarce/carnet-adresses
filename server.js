@@ -10,7 +10,6 @@ const DEVELOPMENT = process.env.NODE_ENV === "development";
 const PORT = Number.parseInt(process.env.PORT || "5001");
 
 const app = express();
-
 app.use(compression());
 app.disable("x-powered-by");
 
