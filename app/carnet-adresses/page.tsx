@@ -1,23 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Search, Plus, User, Phone, Mail, MapPin, Heart, Edit2, Trash2, X, Save, ArrowLeft } from 'lucide-react';
-import Header from './ui/header';
-import dataServices from 'server/services/data.service';
-import { useLoaderData, type LoaderFunctionArgs } from 'react-router';
-export async function loader({ request }: LoaderFunctionArgs) {
-    const url = new URL(request.url);
-    const q = url.searchParams.get('q') || ''
-    const allContacts = await dataServices.getAllContacts(q);
-    const favoriteContacts = allContacts.filter(c => c.favorite);
-    const regularContacts = allContacts.filter(c => !c.favorite);
 
-    return {
-        allContacts,
-        favoriteContacts,
-        regularContacts,
-
-    }
-
-}
 const AddressBookApp = () => {
    
     return (
