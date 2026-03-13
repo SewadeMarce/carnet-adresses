@@ -5,6 +5,7 @@ import apiRouter from "./route";
 import cookieParser from "cookie-parser";
 import { optionalAuthMiddleware } from "./middleware/auth";
 import database from "./config/db";
+import authRouter from "./routes/auth";
 
 
 declare module "react-router" {
@@ -22,7 +23,7 @@ app.use(cookieParser());
 await database.connect();
 app.use(optionalAuthMiddleware);
 
-app.use('/api',apiRouter);
+app.use('/api/auth',authRouter);
 
 app.use(
   createRequestHandler({
