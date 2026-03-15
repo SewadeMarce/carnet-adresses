@@ -102,7 +102,6 @@ const AuthPage = () => {
   useEffect(() => {
     if (actionData?.success && actionData.user) {
       // Store user in localStorage and redirect
-      localStorage.setItem('user', JSON.stringify(actionData.user));
       navigate(actionData.redirectTo || '/carnet-adresses', { replace: true });
     }
   }, [actionData, navigate]);
