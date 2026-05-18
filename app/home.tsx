@@ -78,15 +78,25 @@ const HomePage = () => {
         backdropFilter: scrollY > 50 ? 'blur(20px)' : 'none', borderBottom: scrollY > 50 ? '1px solid rgba(0,0,0,0.06)' : 'none', transition: 'all 0.3s ease'
       }} className="nav-padding">
         <div style={{ maxWidth: '1400px', margin: '0 auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          {/* <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '24px', fontWeight: '400', color: '#2d2d2d' }}>
+            <div style={{ width: '40px', height: '40px', borderRadius: '12px', background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 6px 16px rgba(102,126,234,0.3)' }}>
+              <Users size={20} color="white" strokeWidth={2} />
+            </div>
+            ContactFlow
+          </div> */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '24px', fontWeight: '400', color: '#2d2d2d' }}>
+
             <div style={{ width: '40px', height: '40px', borderRadius: '12px', background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 6px 16px rgba(102,126,234,0.3)' }}>
               <Users size={20} color="white" strokeWidth={2} />
             </div>
             ContactFlow
           </div>
+          <div style={{ display: 'inline-block', background: 'linear-gradient(135deg, #f8f9ff 0%, #fff5f8 100%)', border: '2px solid #667eea', borderRadius: '50px', padding: '8px 18px', marginBottom: '24px', fontFamily: '"Inter", sans-serif', fontSize: '13px', fontWeight: '600', color: '#667eea', animation: 'scaleIn 0.6s ease-out 0.3s both' }}>
+            ✨ Nouveau: Synchronisation automatique
+          </div>
 
           {/* Desktop Nav */}
-          <div className="nav-links" style={{ gap: '40px', alignItems: 'center', fontFamily: '"Inter", sans-serif', fontSize: '15px', fontWeight: '500' }}>
+          {/* <div className="nav-links" style={{ gap: '40px', alignItems: 'center', fontFamily: '"Inter", sans-serif', fontSize: '15px', fontWeight: '500' }}>
             {['#features:Fonctionnalités', '#testimonials:Témoignages', '#pricing:Tarifs'].map((item, i) => {
               const [href, label] = item.split(':');
               return <a key={i} href={href} style={{ color: '#2d2d2d', textDecoration: 'none' }}>{label}</a>;
@@ -94,15 +104,15 @@ const HomePage = () => {
             <Link to={'/carnet-adresses'} className="button" style={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', color: 'white', border: 'none', padding: '12px 28px', borderRadius: '30px', fontSize: '15px', fontWeight: '600', cursor: 'pointer', boxShadow: '0 8px 24px rgba(102,126,234,0.35)' }}>
               Commencer
             </Link>
-          </div>
+          </div> */}
 
           {/* Mobile Hamburger */}
-          {!menuOpen ? (<button className="mobile-menu-btn" onClick={() => setMenuOpen(!menuOpen)} style={{ background: 'transparent', border: '2px solid #f0f0f0', borderRadius: '25px', cursor: 'pointer', color: '#2d2d2d', padding: '4px' }}>
+          {/* {!menuOpen ? (<button className="mobile-menu-btn" onClick={() => setMenuOpen(!menuOpen)} style={{ background: 'transparent', border: '2px solid #f0f0f0', borderRadius: '25px', cursor: 'pointer', color: '#2d2d2d', padding: '4px' }}>
             <Menu size={26} />
           </button>)
             : (<button className="mobile-menu-btn" onClick={() => setMenuOpen(!menuOpen)} style={{ background: 'transparent', border: '2px solid #f0f0f0', borderRadius: '25px', cursor: 'pointer', color: '#2d2d2d', padding: '4px' }}>
               <X size={26} />
-            </button>)}
+            </button>)} */}
         </div>
       </nav>
 
@@ -111,12 +121,11 @@ const HomePage = () => {
         <div className="floating-shape" style={{ width: '600px', height: '600px', background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', top: '-200px', right: '-150px', animation: 'float 20s ease-in-out infinite' }}></div>
         <div className="floating-shape" style={{ width: '500px', height: '500px', background: 'linear-gradient(135deg, #ff6b9d 0%, #ff8fab 100%)', bottom: '-150px', left: '-100px', animation: 'floatReverse 15s ease-in-out infinite' }}></div>
 
+
         <div style={{ maxWidth: '1400px', margin: '0 auto', position: 'relative', zIndex: 1 }} className="hero-grid">
           {/* Left / Main Content */}
           <div style={{ animation: 'slideInLeft 0.8s ease-out' }}>
-            <div style={{ display: 'inline-block', background: 'linear-gradient(135deg, #f8f9ff 0%, #fff5f8 100%)', border: '2px solid #667eea', borderRadius: '50px', padding: '8px 18px', marginBottom: '24px', fontFamily: '"Inter", sans-serif', fontSize: '13px', fontWeight: '600', color: '#667eea', animation: 'scaleIn 0.6s ease-out 0.3s both' }}>
-              ✨ Nouveau: Synchronisation automatique
-            </div>
+
 
             <h1 className="hero-title" style={{ fontWeight: '400', lineHeight: '1.1', margin: '0 0 24px 0', color: '#2d2d2d', letterSpacing: '-0.03em' }}>
               Gérez vos contacts avec{' '}
@@ -136,13 +145,13 @@ const HomePage = () => {
               </button> */}
             </div>
 
-            {/* <div style={{ display: 'flex', gap: '20px', marginTop: '40px', fontFamily: '"Inter", sans-serif', fontSize: '14px', color: '#888', flexWrap: 'wrap', alignItems: 'center' }}>
+           <div style={{ display: 'flex', gap: '20px', marginTop: '40px', fontFamily: '"Inter", sans-serif', fontSize: '14px', color: '#888', flexWrap: 'wrap', alignItems: 'center' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
                 {[...Array(5)].map((_, i) => <Star key={i} size={15} fill="#ffd93d" color="#ffd93d" />)}
                 <span style={{ marginLeft: '5px', color: '#2d2d2d', fontWeight: '600' }}>4.9/5</span>
               </div>
               <div>10,000+ utilisateurs satisfaits</div>
-            </div> */}
+            </div> 
           </div>
 
           {/* Right Mockup - hidden on mobile */}
@@ -171,10 +180,6 @@ const HomePage = () => {
             </div>
           </div>
         </div>
-      </section>
-
-      {/* Stats Section */}
-      <section style={{ background: 'white', borderRadius: '60px 60px 0 0' }} className="section-padding">
         <div style={{ maxWidth: '1400px', margin: '0 auto' }} className="stats-grid">
           {stats.map((stat, index) => {
             const IconComponent = stat.icon;
@@ -191,8 +196,26 @@ const HomePage = () => {
         </div>
       </section>
 
+      {/* Stats Section */}
+      {/* <section style={{ background: 'white', borderRadius: '60px 60px 0 0' }} className="section-padding">
+        <div style={{ maxWidth: '1400px', margin: '0 auto' }} className="stats-grid">
+          {stats.map((stat, index) => {
+            const IconComponent = stat.icon;
+            return (
+              <div key={index} className="stat-card" style={{ textAlign: 'center', padding: '30px 15px', animationDelay: `${index * 0.1}s` }}>
+                <div style={{ width: '65px', height: '65px', borderRadius: '20px', background: 'linear-gradient(135deg, #f8f9ff 0%, #fff5f8 100%)', margin: '0 auto 18px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  <IconComponent size={30} color="#667eea" strokeWidth={1.5} />
+                </div>
+                <div style={{ fontSize: '36px', fontWeight: '400', color: '#2d2d2d', marginBottom: '8px' }}>{stat.value}</div>
+                <div style={{ fontFamily: '"Inter", sans-serif', fontSize: '14px', color: '#888', fontWeight: '500' }}>{stat.label}</div>
+              </div>
+            );
+          })}
+        </div>
+      </section> */}
+
       {/* Features Section */}
-      <section id="features" style={{ background: 'white' }} className="section-padding">
+      {/* <section id="features" style={{ background: 'white' }} className="section-padding">
         <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '50px' }}>
             <h2 className="section-title" style={{ fontWeight: '400', margin: '0 0 16px 0', color: '#2d2d2d', letterSpacing: '-0.02em' }}>
@@ -217,10 +240,10 @@ const HomePage = () => {
             })}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Testimonials Section */}
-      <section id="testimonials" style={{ background: 'linear-gradient(135deg, #fdfbfb 0%, #f7f4f9 50%, #fef9f8 100%)' }} className="section-padding">
+      {/* <section id="testimonials" style={{ background: 'linear-gradient(135deg, #fdfbfb 0%, #f7f4f9 50%, #fef9f8 100%)' }} className="section-padding">
         <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '50px' }}>
             <h2 className="section-title" style={{ fontWeight: '400', margin: '0 0 16px 0', color: '#2d2d2d', letterSpacing: '-0.02em' }}>
@@ -246,10 +269,10 @@ const HomePage = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* CTA Section */}
-      <section id="pricing" style={{ background: 'white', position: 'relative', overflow: 'hidden' }} className="section-padding">
+      {/* <section id="pricing" style={{ background: 'white', position: 'relative', overflow: 'hidden' }} className="section-padding">
         <div className="floating-shape" style={{ width: '500px', height: '500px', background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', top: '-150px', right: '-80px', animation: 'rotate 30s linear infinite' }}></div>
         <div style={{ maxWidth: '860px', margin: '0 auto', textAlign: 'center', position: 'relative', zIndex: 1 }}>
           <h2 className="cta-title" style={{ fontWeight: '400', margin: '0 0 24px 0', color: '#2d2d2d', letterSpacing: '-0.02em', lineHeight: '1.2' }}>
@@ -263,10 +286,10 @@ const HomePage = () => {
             Commencer maintenant <ArrowRight size={22} />
           </Link>
         </div>
-      </section>
+      </section> */}
 
       {/* Footer */}
-      <footer style={{ background: '#2d2d2d', color: 'white', borderRadius: '50px 50px 0 0' }} className="footer-padding">
+      {/* <footer style={{ background: '#2d2d2d', color: 'white', borderRadius: '50px 50px 0 0' }} className="footer-padding">
              <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
                <div className="footer-grid" style={{ marginBottom: '50px' }}>
                  <div style={{ gridColumn: '1 / -1' }}>
@@ -301,7 +324,7 @@ const HomePage = () => {
                  © 2026 ContactFlow. Tous droits réservés.
                </div>
              </div>
-           </footer>
+           </footer> */}
     </div>
   );
 };
